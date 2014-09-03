@@ -1,6 +1,6 @@
-USER=tronpaul
+USER=shastafareye
 
 build:
-	docker build -t ${USER}/znc .
+	docker build -t ${USER}/znc-tor .
 
 .PHONY: build

@@ -36,5 +36,8 @@ fi
 # mounted directory on the host machine too.
 chown -R znc:znc "$DATADIR"
 
+# Start tor
+sudo service tor start
+
 # Start ZNC.
-exec sudo -u znc znc --foreground --datadir="$DATADIR" $@
+exec sudo -u znc proxychains znc --foreground --datadir="$DATADIR" $@
