@@ -40,6 +40,33 @@ I'd recommend you create your own user by cloning the admin user, then ensure
 your new cloned user is set to be an admin user. Once you login with your new
 user go ahead and delete the default admin user.
 
+Because ZNC does not resolve .onion domains on its own, we map them to
+internal IP addresses in our custom tor configuration ([torrc][]).  If you'd
+like to connect to additional IRC servers using hidden tor services (.onion
+addresses), define them in [torrc][] before building the Docker image.
+[torrc]: https://github.com/shastafareye/docker-znc-tor/blob/master/torrc
+
+Freenode's .onion Servers are defined here: https://freenode.net/irc_servers.shtml
+
+
+## Connecting to Freenode's Hidden Tor Services
+
+1. If you have not already, register a Freenode NickServ account:
+   (https://freenode.net/faq.shtml#nicksetup)
+2. Edit your user within the ZNC webadmin `ZNC » webadmin » Edit User`, add a freenode
+   network, enter your registered Nickname, enable the sasl module, and set these as the
+   "Servers of this IRC network":
+   10.40.40.41 +6697
+   10.40.40.42 +6697
+   10.40.40.43 +6697
+3. Save your new ZNC network configuration and connect to ZNC with your IRC
+   client.  Set the server username field as: `<nickname>/<networkname>`
+   or set the server password field as: `<nickname>/<networkname>:<password>`
+4. Once connected to ZNC you need to configure sasl (only once):
+
+
+    /msg *sasl Set AccountName Password
+
 
 ## External Modules
 
