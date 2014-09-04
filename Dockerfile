@@ -9,6 +9,10 @@ ADD         bootstrap.sh /tmp/
 RUN         chmod +x /tmp/bootstrap.sh
 RUN         /tmp/bootstrap.sh
 
+ADD         torrc /etc/tor/
+RUN         chmod 644 /etc/tor/torrc
+RUN         chown 0:0 /etc/tor/torrc
+
 RUN         useradd znc
 ADD         start-znc-tor /usr/local/bin/
 ADD         znc.conf.default /src/
