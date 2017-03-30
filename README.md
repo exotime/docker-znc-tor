@@ -53,12 +53,10 @@ Freenode's .onion Servers are defined here: https://freenode.net/irc_servers.sht
 
 1. If you have not already, register a Freenode NickServ account:
    (https://freenode.net/faq.shtml#nicksetup)
-2. Edit your user within the ZNC webadmin `ZNC » webadmin » Edit User`, add a freenode
+2. Edit your user within the ZNC webadmin `ZNC » webadmin » Edit User`, add a Freenode
    network, enter your registered Nickname, enable the sasl module, and set these as the
    "Servers of this IRC network":
-   10.40.40.41 +6697
-   10.40.40.42 +6697
-   10.40.40.43 +6697
+   10.40.40.40 +6697
 3. Save your new ZNC network configuration and connect to ZNC with your IRC
    client.  Set the server username field as: `<nickname>/<networkname>`
    or set the server password field as: `<nickname>/<networkname>:<password>`
